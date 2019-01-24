@@ -1,0 +1,134 @@
+\documentclass[11pt]{beamer}
+\usetheme{CambridgeUS}
+\usepackage[utf8]{inputenc}
+\usepackage{amsmath}
+\usepackage{blkarray}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{minted}
+
+\usepackage{array,amsfonts}
+\newcommand\myfunc[5]{%
+  \begingroup
+  \setlength\arraycolsep{0pt}
+  #1\colon\begin{array}[t]{c >{{}}c<{{}} c}
+             #2 & \to & #3 \\ #4 & \to & #5 
+          \end{array}%
+  \endgroup}
+
+
+%\author{}
+\title{Modélisation des structures informatiques: TP1}
+%\setbeamercovered{transparent} 
+\setbeamertemplate{navigation symbols}{} 
+%\logo{} 
+\institute{mouhcine.mendil@inria.fr} 
+%\date{} 
+%\subject{} 
+\begin{document}
+
+\begin{frame}
+\titlepage
+\end{frame}
+
+
+%\begin{frame}
+%\titlepage
+%\end{frame}
+
+%\begin{frame}
+%\tableofcontents
+%\end{frame}
+
+
+
+
+\begin{frame}{Structure et Evaluation}
+\begin{itemize}
+\item 10 séances: 
+\begin{itemize}
+\item Exercices de TP
+\item 2 projets
+\end{itemize}
+\onslide<2->{
+\item Evaluation
+\begin{itemize}
+\item Soutenance de projets
+\end{itemize}
+}
+\onslide<3->{
+\item Objectif: Ecrire des programmes informatiques pour représenter les notions développées dans le cours
+}
+\end{itemize}
+\end{frame}
+
+\begin{frame}{Relations: Rappel}
+\begin{definition}[Relation]
+Une relation $R$ entre deux ensembles $A$ et $B$ est un sous-ensemble de $A \times B$.
+\end{definition}
+\onslide<2->{
+\begin{example}[1]
+$A=\{1,2\}$, $B=\{0,12,20\}$.  \newline
+La relation $R$ entre $A$ et $B$ définie par $"\ge"$ est l'ensemble $\{(1,0),(2,0)\}$
+\end{example} 
+}
+\end{frame}
+
+\begin{frame}{Relations: Autre définition}
+\begin{definition}[Relation]
+Une relation $R$ entre deux ensembles $A$ et $B$ est une fonction $A \times B \rightarrow \{0,1\}$ telle que:
+\begin{equation*}
+\myfunc{f}{A \times B}{\{0,1\}}{(a,b)}{1 \textnormal{ si } aRb \textnormal{} \\ & & 0 \textnormal{ sinon}}
+\end{equation*}
+\end{definition}
+\begin{columns}
+\column{.45\textwidth}
+\onslide<2->{
+Représentation matricielle de $R$:
+\begin{itemize}
+\item $\forall i = 1,..,n \quad a_i \in A$
+\item $\forall j = 1,..,m \quad b_i \in B$
+\item $R[a_i][b_j] = 1$ ssi $a_iRb_j$
+\end{itemize}
+}
+\column{.45\textwidth}
+\onslide<3->{
+\[
+\begin{blockarray}{cccccc}
+& b_1 & b_2 & .. & b_{m-1} & b_m \\
+\begin{block}{c(ccccc)}
+  a_1 & 1 & 0 & . & . & .\\
+  a_2 & . & . & . & . & .\\
+  ... & . & . & . & . & .\\
+  a_n & . & . & . & . & .\\
+\end{block}
+\end{blockarray}
+ \]
+ }
+\end{columns}
+\end{frame}
+
+\begin{frame}{Python: Rappels}
+\begin{block}{}
+\scriptsize
+\inputminted{python}{src_python/tp1_cours.py}
+\end{block}
+\end{frame}
+
+\begin{frame}{Structure du TP1}
+\begin{itemize}
+\item Partie 1: 
+\begin{itemize}
+\item Propriétés de l'anneau des booléens: élément neutre (1 ou vrai), élément absorbant (0 ou faux), la somme ($\vee$) et le produit ($\wedge)$
+\item Affichage matricielle d'une relation 
+\end{itemize}
+\onslide<2->{
+\item Partie 2: codage de relations simples (successeur, motié et diviseur non trivial)}
+\onslide<3->{
+\item Partie 3: Opérations sur les relations (symétrie, composition, union, intersection et inclusion)}
+\onslide<4->{
+\item Enoncé du TP et code à trous sur http://sergipujades.free.fr/teaching/INF202/}
+\end{itemize}
+\end{frame}
+
+\end{document}
