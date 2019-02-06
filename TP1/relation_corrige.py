@@ -1,8 +1,8 @@
 #!/usr/bin/env python3
-from anneau01 import *
+from anneau01_corrige import *
 
 ###########################################################################################
-# The following functions create the random, the empry and the full relations, respectively 
+# The following functions create the random, the empty and the full relations, respectively 
 ###########################################################################################
 
 def genR(A,B):
