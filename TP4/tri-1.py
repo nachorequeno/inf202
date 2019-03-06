@@ -1,5 +1,7 @@
 #!/usr/bin/env python3
 # -*- coding: UTF-8 -*-
+# Auteur: Ch. Boitet
+# Révisions: Mouhcine Mendil, Ch. Boitet le 6/3/19
 
 from random import randint
 from scipy import *
@@ -12,13 +14,13 @@ def gen_seq_aleat(taille, valeur_min, valeur_max):
     """ Génération d’une séquence de nombres entiers aléatoires
 
     :param taille: taille de la séquence à générer
-    :param valeur_min: valeur minimal des nombres entiers générés
-    :param valeur_max: valeur maximal des nombres entiers générés
+    :param valeur_min: valeur minimale des nombres entiers générés
+    :param valeur_max: valeur maximale des nombres entiers générés
     :return séquence générée: liste dont les éléments sont
     des triplets [indice courant, indice initial, valeur]
     """
     # Les éléments de "seq" sont des triplets [indice courant, indice initial, valeur]
-    # L'indice initial est l'emplacement de l'élement dans la séquence au moment de la génération
+    # L'indice initial est l'emplacement de l'élément dans la séquence au moment de la génération
     # L'indice courant sera l'indice une fois l'élément trié
     seq = []
     print("\n *** gen_seq_aleat: paramètres de la génération pseudo-aléatoire =",
