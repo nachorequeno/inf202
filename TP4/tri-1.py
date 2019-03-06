@@ -1,7 +1,6 @@
 #!/usr/bin/env python3
 # -*- coding: UTF-8 -*-
 # Auteur: Ch. Boitet
-# Révisions: Mouhcine Mendil, Ch. Boitet le 6/3/19
 
 from random import randint
 from scipy import *
